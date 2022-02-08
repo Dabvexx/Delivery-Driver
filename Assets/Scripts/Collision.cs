@@ -17,9 +17,8 @@ public class Collision : MonoBehaviour
 
     void Update()
     {
-        
-    }
 
+    }
     #endregion
 
     #region Private Methods
