@@ -10,14 +10,9 @@ public class Collision : MonoBehaviour
 
     #region Unity Methods
 
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    void Update()
-    {
-
+        Debug.Log("Collided");
     }
     #endregion
 
