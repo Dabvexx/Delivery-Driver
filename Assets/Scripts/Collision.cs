@@ -17,7 +17,15 @@ public class Collision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Triggered");
+        if (collision.tag == "Package")
+        {
+            Debug.Log("Picked up package");
+        }
+
+        if (collision.tag == "Customer")
+        {
+            Debug.Log("Delivered Package");
+        }
     }
     #endregion
 
