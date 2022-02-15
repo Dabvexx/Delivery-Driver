@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Roads
+    uniqueID: 4103410743
+    locked: 0
+  - name: Car
+    uniqueID: 169953605
+    locked: 0
+  - name: Decor
+    uniqueID: 2824844569
+    locked: 0
+  - name: House
+    uniqueID: 757785973
+    locked: 0
