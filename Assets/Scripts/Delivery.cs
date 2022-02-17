@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collision : MonoBehaviour
+public class Delivery : MonoBehaviour
 {
     #region Variables
-
+    private bool hasPackage = false;
     #endregion
 
     #region Unity Methods
@@ -20,9 +20,10 @@ public class Collision : MonoBehaviour
         if (collision.tag == "Package")
         {
             Debug.Log("Picked up package");
+            hasPackage = true;
         }
 
-        if (collision.tag == "Customer")
+        if (collision.tag == "Customer" && hasPackage)
         {
             Debug.Log("Delivered Package");
         }

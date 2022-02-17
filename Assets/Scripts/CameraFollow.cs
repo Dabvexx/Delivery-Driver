@@ -20,6 +20,7 @@ public class CameraFollow : MonoBehaviour
         //Vector3 velocity = CalculateCameraMovement();
         //transform.Translate(velocity);
         transform.position = player.transform.position + offset;
+        transform.LookAt(player.transform);
     }
 
     /*
