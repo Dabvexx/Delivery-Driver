@@ -46,17 +46,18 @@ public class Delivery : MonoBehaviour
 
         if (collision.tag == "Customer" && hasPackage)
         {
-            HandleCustomerLogic();
+            HandleCustomerLogic(collision);
         }
     }
     #endregion
 
     #region Private Methods
-    private void HandleCustomerLogic()
+    private void HandleCustomerLogic(Collider2D collision)
     {
         Debug.Log("Delivered Package");
         sr.color = baseColor;
         hasPackage = false;
+        Destroy(collision.gameObject, destroyDelay);
     }
 
     private void HandlePackageLogic(Collider2D collision)
