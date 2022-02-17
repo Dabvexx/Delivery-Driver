@@ -6,10 +6,15 @@ public class Delivery : MonoBehaviour
 {
     #region Variables
     private bool hasPackage = false;
+
+    // Dunno why we are adding a delay to destroying the package but alright.
+    [SerializeField]
+    private float destroyDelay = .5f;
     #endregion
 
     #region Unity Methods
 
+    // Currently useless function call.
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collided");
@@ -21,6 +26,7 @@ public class Delivery : MonoBehaviour
         {
             Debug.Log("Picked up package");
             hasPackage = true;
+            Destroy(collision.gameObject, destroyDelay);
         }
 
         if (collision.tag == "Customer" && hasPackage)

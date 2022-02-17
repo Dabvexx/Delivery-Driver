@@ -16,7 +16,6 @@ public class Driver : MonoBehaviour
     #endregion Variables
 
     #region Unity Methods
-
     // Built in Unity Methods
 
     private void Update()
