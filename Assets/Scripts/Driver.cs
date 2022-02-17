@@ -13,6 +13,14 @@ public class Driver : MonoBehaviour
     [Range(.1f, 50f)]
     private float moveSpeed;
 
+    [SerializeField]
+    [Range(.1f, 50f)]
+    private float slowSpeed;
+
+    [SerializeField]
+    [Range(.1f, 50f)]
+    private float boostSpeed;
+
     #endregion Variables
 
     #region Unity Methods
@@ -21,6 +29,19 @@ public class Driver : MonoBehaviour
     private void Update()
     {
         HandleInput();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        moveSpeed = slowSpeed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Boost")
+        {
+            moveSpeed = boostSpeed;
+        }
     }
 
     #endregion Unity Methods

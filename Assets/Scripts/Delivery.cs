@@ -40,24 +40,32 @@ public class Delivery : MonoBehaviour
     {
         if (collision.tag == "Package")
         {
-            Debug.Log("Picked up package");
-            hasPackage = true;
-            sr.color = hasPackageColor;
-            Destroy(collision.gameObject, destroyDelay);
+            HandlePackageLogic(collision);
 
         }
 
         if (collision.tag == "Customer" && hasPackage)
         {
-            Debug.Log("Delivered Package");
-            sr.color = baseColor;
-            hasPackage = false;
+            HandleCustomerLogic();
         }
     }
     #endregion
 
     #region Private Methods
+    private void HandleCustomerLogic()
+    {
+        Debug.Log("Delivered Package");
+        sr.color = baseColor;
+        hasPackage = false;
+    }
 
+    private void HandlePackageLogic(Collider2D collision)
+    {
+        Debug.Log("Picked up package");
+        hasPackage = true;
+        sr.color = hasPackageColor;
+        Destroy(collision.gameObject, destroyDelay);
+    }
     #endregion
 
     #region Public Methods
